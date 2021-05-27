@@ -1,0 +1,25 @@
+<template>
+  <b-row align-h="center" class="m-2">
+    <h1 v-if="playerState == 'buffering'">
+      <b-icon icon="arrow-clockwise" animation="spin" font-scale="2"></b-icon>
+    </h1>
+    <h1 v-if="playerState == 'paused'">
+      <b-icon icon="pause-fill" animation="fade" font-scale="2"></b-icon>
+    </h1>
+    <h1 v-if="playerState == 'playing'">
+      <b-icon icon="play-fill" animation="fade" font-scale="2"></b-icon>
+    </h1>
+    <h2>{{ $store.state.currentlyPlaying }}</h2>
+  </b-row>
+</template>
+
+<script>
+import { mapState } from "vuex";
+
+export default {
+  name: "CurrentlyPlaying",
+  computed: { ...mapState(["playerState", "currentlyPlaying"]) },
+};
+</script>
+
+<style></style>
