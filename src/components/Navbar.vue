@@ -1,9 +1,4 @@
 <template>
-  <!-- <div>
-		<router-link to="/">Search</router-link>
-		<router-link to="/controller">Control</router-link>
-		<router-link to="/raspi">Raspi</router-link>
-	</div> -->
   <div>
     <b-navbar toggleable="lg" type="dark" variant="info">
       <b-navbar-brand to="/">
@@ -28,9 +23,9 @@
 </template>
 
 <script>
-export default {
-  name: "Navbar",
-};
+  export default {
+    name: "Navbar",
+  };
 </script>
 
 <style></style>

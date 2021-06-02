@@ -1,94 +1,25 @@
 <template>
   <div>
-    <button class="pushable" @click="pause_emit()">
-      <span class="shadow"></span>
-      <span class="edge"></span>
-      <span class="front">
-        <b-icon-pause-fill></b-icon-pause-fill>
-      </span>
-    </button>
+    <b-button @click="pause_emit()">
+      <b-icon-pause-fill></b-icon-pause-fill>
+    </b-button>
   </div>
 </template>
 
 <script>
-export default {
-  name: "Pause",
-  methods: {
-    pause_emit() {
-      this.$socket.emit("pause_video");
+  export default {
+    name: "Pause",
+    methods: {
+      pause_emit() {
+        this.$socket.emit("pause_video");
+      },
     },
-  },
-  sockets: {
-    connect() {
-      console.log("connected");
+    sockets: {
+      connect() {
+        console.log("connected");
+      },
     },
-  },
-};
+  };
 </script>
 
-<style lang="scss" scoped>
-.pushable {
-  position: relative;
-  border: none;
-  background: transparent;
-  padding: 0;
-  cursor: pointer;
-  outline-offset: 4px;
-  transition: filter 250ms;
-}
-.shadow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 12px;
-  background: hsl(0deg 0% 0% / 0.25);
-  will-change: transform;
-  transform: translateY(2px);
-  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
-}
-.edge {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 12px;
-  background: hsl(340deg 100% 32%);
-}
-.front {
-  display: block;
-  position: relative;
-  padding: 12px 42px;
-  border-radius: 12px;
-  font-size: 1.25rem;
-  color: white;
-  background: hsl(345deg 100% 47%);
-  will-change: transform;
-  transform: translateY(-4px);
-  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
-}
-.pushable:hover {
-  filter: brightness(110%);
-}
-.pushable:hover .front {
-  transform: translateY(-4px);
-  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
-}
-.pushable:active .front {
-  transform: translateY(2px);
-  transition: transform 34ms;
-}
-.pushable:hover .shadow {
-  transform: translateY(2px);
-  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
-}
-.pushable:active .shadow {
-  transform: translateY(1px);
-  transition: transform 34ms;
-}
-.pushable:focus:not(:focus-visible) {
-  outline: none;
-}
-</style>
+<style lang="scss" scoped></style>

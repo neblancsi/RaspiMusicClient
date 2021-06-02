@@ -14,49 +14,49 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+  import { mapState } from "vuex";
 
-export default {
-  name: "PlayerContainer",
-  data() {
-    return {
-      videoId: null,
-      playerVars: {
-        autoplay: 1,
+  export default {
+    name: "PlayerContainer",
+    data() {
+      return {
+        videoId: null,
+        playerVars: {
+          autoplay: 1,
+        },
+      };
+    },
+    methods: {
+      playVideo() {
+        this.player.playVideo();
       },
-    };
-  },
-  methods: {
-    playVideo() {
-      this.player.playVideo();
+      pauseVideo() {
+        this.player.pauseVideo();
+      },
+      playerStateChange(state) {
+        this.$socket.emit("player_state_change", state);
+      },
+      loadVideo(arg) {
+        this.player.loadVideoById(arg);
+      },
     },
-    pauseVideo() {
-      this.player.pauseVideo();
+    computed: {
+      ...mapState(["playerState"]),
+      player() {
+        return this.$refs.youtube.player;
+      },
     },
-    playerStateChange(state) {
-      this.$socket.emit("player_state_change", state);
+    sockets: {
+      play_video() {
+        this.playVideo();
+      },
+      pause_video() {
+        this.pauseVideo();
+      },
+      song_select(arg) {
+        const id = arg.id.videoId;
+        this.loadVideo(id);
+      },
     },
-    loadVideo(arg) {
-      this.player.loadVideoById(arg);
-    },
-  },
-  computed: {
-    ...mapState(["playerState"]),
-    player() {
-      return this.$refs.youtube.player;
-    },
-  },
-  sockets: {
-    play_video() {
-      this.playVideo();
-    },
-    pause_video() {
-      this.pauseVideo();
-    },
-    song_select(arg) {
-      const id = arg.id.videoId;
-      this.loadVideo(id);
-    },
-  },
-};
+  };
 </script>

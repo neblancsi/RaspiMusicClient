@@ -14,21 +14,19 @@
 </template>
 
 <script>
-export default {
-  props: ["resultItem"],
-  methods: {
-    song_select_emit(data) {
-      this.$socket.emit("song_select", data);
-
-      this.$router.push("/controller");
+  export default {
+    props: ["resultItem"],
+    methods: {
+      song_select_emit(data) {
+        this.$socket.emit("song_select", data);
+      },
     },
-  },
-  sockets: {
-    connect() {
-      console.log("connected");
+    sockets: {
+      connect() {
+        console.log("connected");
+      },
     },
-  },
-};
+  };
 </script>
 
 <style></style>
