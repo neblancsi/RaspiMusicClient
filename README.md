@@ -1,5 +1,17 @@
 # RaspiMusic client
 
+## Features
+
+search and play music from YouTube
+
+control the music from multiple devices in real time
+
+shut down and reboot the Raspberry pi
+
+## Screenshot
+
+![](screenshot.png)
+
 ## Project setup
 
 set static IP for the raspberry pi
