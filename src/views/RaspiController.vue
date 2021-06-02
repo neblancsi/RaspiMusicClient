@@ -6,11 +6,11 @@
 </template>
 
 <script>
-import Reboot from "../components/RaspiController/Reboot.vue";
-import ShutDown from "../components/RaspiController/ShutDown.vue";
-export default {
-  components: { ShutDown, Reboot },
-};
+  import Reboot from "../components/RaspiController/Reboot.vue";
+  import ShutDown from "../components/RaspiController/ShutDown.vue";
+  export default {
+    components: { ShutDown, Reboot },
+  };
 </script>
 
 <style Reboot></style>

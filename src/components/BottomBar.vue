@@ -12,10 +12,10 @@
 </template>
 
 <script>
-  import PlayerStateIcon from "../PlayerController/PlayerStateIcon.vue";
+  import PlayerStateIcon from "./PlayerController/PlayerStateIcon.vue";
 
-  import Pause from "../PlayerController/Pause.vue";
-  import Resume from "../PlayerController/Resume.vue";
+  import Pause from "./PlayerController/Pause.vue";
+  import Resume from "./PlayerController/Resume.vue";
   export default {
     components: { Pause, Resume, PlayerStateIcon },
     name: "BottomBar",

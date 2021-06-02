@@ -3,12 +3,14 @@
     <Navbar />
     <router-view></router-view>
     <bottom-bar v-if="playerState" />
+    <volume-control />
   </div>
 </template>
 
 <script>
-  import BottomBar from "../components/BottomControllerBar/BottomBar.vue";
+  import BottomBar from "../components/BottomBar.vue";
   import Navbar from "../components/Navbar.vue";
+  import VolumeControl from "../components/VolumeControl.vue";
 
   export default {
     data() {
@@ -16,7 +18,7 @@
         playerState: null,
       };
     },
-    components: { Navbar, BottomBar },
+    components: { Navbar, BottomBar, VolumeControl },
     name: "Dashboard",
     sockets: {
       player_state_change(args) {
