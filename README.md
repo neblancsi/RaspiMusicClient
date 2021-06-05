@@ -8,9 +8,9 @@ control the music from multiple devices in real time
 
 shut down and reboot the Raspberry pi
 
-## Screenshot
+## Screenshots
 
-![](screenshot.png)
+![](screenshot.png) ![](screenshot2.png)
 
 ## Project setup
 
