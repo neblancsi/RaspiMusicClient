@@ -13,4 +13,4 @@
   };
 </script>
 
-<style Reboot></style>
+<style></style>

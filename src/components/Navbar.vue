@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-navbar toggleable="lg" type="dark" variant="info">
+    <b-navbar toggleable="lg" type="dark" variant="red">
       <b-navbar-brand to="/">
         <img
           src="https://cdn.iconscout.com/icon/free/png-256/raspberry-pi-3-569254.png"

@@ -5,15 +5,15 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      myMessage: "not connected",
-    };
-  },
+  export default {
+    data() {
+      return {
+        myMessage: "not connected",
+      };
+    },
 
-  methods: {},
-};
+    methods: {},
+  };
 </script>
 
 <style lang="scss"></style>

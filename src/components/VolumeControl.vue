@@ -33,7 +33,7 @@
   };
 </script>
 
-<style>
+<style scoped lang="scss">
   .volume {
     position: fixed;
     right: 0;

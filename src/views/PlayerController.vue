@@ -1,14 +1,11 @@
 <template>
   <div class="px-3">
-    <!-- <b-row align-h="center">
-    </b-row> -->
-
     <b-row align-h="around" align-v="center">
       <resume></resume>
       <player-state-icon :scale="2"/>
       <pause></pause
     ></b-row>
-    <h2>{{ currentlyPlaying }}</h2>
+    <h2 class="song-title">{{ currentlyPlaying }}</h2>
   </div>
 </template>
 
@@ -31,3 +28,9 @@
     },
   };
 </script>
+
+<style lang="scss" scoped>
+  .song-title {
+    color: gray;
+  }
+</style>

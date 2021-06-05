@@ -5,7 +5,6 @@
     }}</marquee>
     <b-row align-h="around" align-v="center">
       <resume></resume>
-      <player-state-icon :scale="1"/>
       <pause></pause
     ></b-row>
   </b-container>
@@ -25,9 +24,9 @@
 <style>
   .bottombar {
     color: rgba(255, 255, 255, 0.5);
-    border-radius: 10px;
     position: fixed;
-    bottom: 5px;
-    background-color: #17a2b8;
+    bottom: 0;
+    background-color: rgba(56, 56, 56, 0.918);
+    padding-bottom: 5px;
   }
 </style>

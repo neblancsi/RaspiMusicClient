@@ -7,8 +7,12 @@
     tag="article"
     class="w-100"
   >
-    <b-button @click="song_select_emit(resultItem)" variant="primary">
-      Lejátszás
+    <b-button
+      @click="song_select_emit(resultItem)"
+      variant="dark"
+      class="play-button"
+    >
+      <b-icon icon="play"></b-icon>
     </b-button>
   </b-card>
 </template>
@@ -29,4 +33,8 @@
   };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+  .play-button {
+    float: right;
+  }
+</style>
