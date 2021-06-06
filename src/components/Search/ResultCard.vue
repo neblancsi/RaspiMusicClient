@@ -1,6 +1,6 @@
 <template>
   <b-card
-    :title="resultItem.snippet.title"
+    :title="escape(resultItem.snippet.title)"
     :img-src="resultItem.snippet.thumbnails.high.url"
     img-alt="Image"
     img-top
@@ -18,11 +18,16 @@
 </template>
 
 <script>
+  import { htmlUnescape } from "escape-goat";
+
   export default {
     props: ["resultItem"],
     methods: {
       song_select_emit(data) {
         this.$socket.emit("song_select", data);
+      },
+      escape(string) {
+        return htmlUnescape(string);
       },
     },
     sockets: {

@@ -5,7 +5,7 @@
       <player-state-icon :scale="2"/>
       <pause></pause
     ></b-row>
-    <h2 class="song-title">{{ currentlyPlaying }}</h2>
+    <h2 class="song-title">{{ escape(currentlyPlaying) }}</h2>
   </div>
 </template>
 
@@ -14,13 +14,18 @@
   import Pause from "../components/PlayerController/Pause.vue";
   import Resume from "../components/PlayerController/Resume.vue";
   import { mapState } from "vuex";
+  import { htmlUnescape } from "escape-goat";
 
   export default {
     name: "PlayerController",
     components: { PlayerStateIcon, Pause, Resume },
     computed: { ...mapState(["currentlyPlaying"]) },
 
-    methods: {},
+    methods: {
+      escape(string) {
+        return htmlUnescape(string);
+      },
+    },
     sockets: {
       connect() {
         console.log("connected");

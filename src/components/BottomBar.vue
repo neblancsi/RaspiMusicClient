@@ -1,7 +1,7 @@
 <template>
   <b-container class="bottombar px3">
     <marquee behavior="scroll" direction="left">{{
-      $store.state.currentlyPlaying
+      escape($store.state.currentlyPlaying)
     }}</marquee>
     <b-row align-h="around" align-v="center">
       <resume></resume>
@@ -12,10 +12,16 @@
 
 <script>
   import PlayerStateIcon from "./PlayerController/PlayerStateIcon.vue";
+  import { htmlUnescape } from "escape-goat";
 
   import Pause from "./PlayerController/Pause.vue";
   import Resume from "./PlayerController/Resume.vue";
   export default {
+    methods: {
+      escape(string) {
+        return htmlUnescape(string);
+      },
+    },
     components: { Pause, Resume, PlayerStateIcon },
     name: "BottomBar",
   };
