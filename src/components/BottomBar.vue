@@ -27,7 +27,7 @@
     position: fixed;
     bottom: 0;
     background-color: rgba(56, 56, 56, 0.918);
-    border-top: 1px solid white;
+    border-top: 1px solid black;
     padding-bottom: 5px;
   }
 </style>
